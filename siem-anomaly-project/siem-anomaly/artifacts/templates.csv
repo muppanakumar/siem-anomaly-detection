@@ -1,0 +1,19 @@
+template_id,template,train_count
+0,BLOCK* NameSystem.allocateBlock: <*> <*>,4764
+1,Receiving block <*> src: <*> dest: <*>,14216
+2,BLOCK* NameSystem.addStoredBlock: blockMap updated: <*> is added to <*> size <*>,14134
+3,PacketResponder <*> for block <*> terminating,14128
+4,Received block <*> of size <*> from <*>,14127
+5,Verification succeeded for <*>,2058
+6,writeBlock <*> received exception java.io.IOException: Could not read from stream,26
+7,Received block <*> src: <*> dest: <*> of size <*>,7
+8,<*>:Transmitted block <*> to <*>,4
+9,"<*> Starting thread to transfer block <*> to <*>, <*>",3
+10,BLOCK* ask <*> to replicate <*> to datanode(s) <*> <*>,3
+11,<*> Served block <*> to <*>,407
+12,BLOCK* ask <*> to replicate <*> to datanode(s) <*>,1
+13,<*> Starting thread to transfer block <*> to <*>,1
+14,writeBlock <*> received exception java.net.SocketTimeoutException,1
+15,PacketResponder <*> <*> Exception java.io.EOFException,1
+16,Exception in receiveBlock for block <*> java.io.IOException: Connection reset by peer,1
+17,writeBlock <*> received exception java.io.IOException: Connection reset by peer,1

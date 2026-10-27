@@ -1,0 +1,232 @@
+{
+  "config": {
+    "k": 20,
+    "min_share": 0.01,
+    "envelope_q": 0.99,
+    "train": 0.6,
+    "val": 0.15,
+    "w_bigram": 0.6,
+    "w_shape": 0.5,
+    "min_bigram_df": 3,
+    "seed": 0
+  },
+  "threshold": 1.5655159950256348,
+  "timings_s": {
+    "ingest": 0.53,
+    "sessionize": 0.38,
+    "template_mining": 1.44,
+    "features_and_clustering": 1.13,
+    "evaluation": 9.35,
+    "explanations": 0.06
+  },
+  "split_sizes": {
+    "train": 4764,
+    "val": 1191,
+    "test": 1985
+  },
+  "anomalies": {
+    "train": 154,
+    "val": 54,
+    "test": 105
+  },
+  "val": {
+    "primary": {
+      "n": 1191,
+      "n_anomalies": 54,
+      "prevalence": 0.04534005037783375,
+      "pr_auc": 0.6729988326385348,
+      "roc_auc": 0.8549545587804164,
+      "best_f1_oracle": 0.7586206896551725,
+      "best_f1_threshold": 2.3560149669647217,
+      "precision@1%": 1.0,
+      "recall@1%": 0.2222222222222222,
+      "precision@2%": 1.0,
+      "recall@2%": 0.4444444444444444,
+      "precision@5%": 0.5666666666666667,
+      "recall@5%": 0.6296296296296297,
+      "threshold": 1.5655159950256348,
+      "tp": 33,
+      "fp": 5,
+      "fn": 21,
+      "tn": 1132,
+      "precision": 0.868421052631579,
+      "recall": 0.6111111111111112,
+      "f1": 0.7173913043478262,
+      "alert_rate": 0.03190596137699412
+    },
+    "sensitivity_pr_auc": {
+      "k=10|tau=0.005": 0.0833586978819358,
+      "k=10|tau=0.01": 0.6568564532345783,
+      "k=10|tau=0.02": 0.6568564532345783,
+      "k=10|tau=0.05": 0.6520316613899043,
+      "k=20|tau=0.005": 0.11713371074221697,
+      "k=20|tau=0.01": 0.6729988326385348,
+      "k=20|tau=0.02": 0.6670506680447009,
+      "k=20|tau=0.05": 0.6546429812798893,
+      "k=30|tau=0.005": 0.3679154158473895,
+      "k=30|tau=0.01": 0.6728919637212256,
+      "k=30|tau=0.02": 0.6687781412989455,
+      "k=30|tau=0.05": 0.6535882648878114,
+      "k=50|tau=0.005": 0.38925688750894943,
+      "k=50|tau=0.01": 0.6717490163680168,
+      "k=50|tau=0.02": 0.6597615625148456,
+      "k=50|tau=0.05": 0.6535644270751033
+    },
+    "ablation": {
+      "event counts only": {
+        "pr_auc": 0.6296296296296295,
+        "roc_auc": 0.8153034300791557
+      },
+      "+ transitions": {
+        "pr_auc": 0.6362135246277059,
+        "roc_auc": 0.7910681129678492
+      },
+      "+ shape/timing": {
+        "pr_auc": 0.676211415325571,
+        "roc_auc": 0.8329098667709046
+      },
+      "all blocks (default)": {
+        "pr_auc": 0.6729988326385348,
+        "roc_auc": 0.8549545587804164
+      }
+    }
+  },
+  "test": {
+    "primary": {
+      "n": 1985,
+      "n_anomalies": 105,
+      "prevalence": 0.05289672544080604,
+      "pr_auc": 0.6458889336334935,
+      "roc_auc": 0.8387867274569403,
+      "best_f1_oracle": 0.7471264367816093,
+      "best_f1_threshold": 2.3658103942871094,
+      "precision@1%": 0.95,
+      "recall@1%": 0.18095238095238095,
+      "precision@2%": 0.95,
+      "recall@2%": 0.3619047619047619,
+      "precision@5%": 0.6565656565656566,
+      "recall@5%": 0.6190476190476191,
+      "threshold": 1.5655159950256348,
+      "tp": 65,
+      "fp": 33,
+      "fn": 40,
+      "tn": 1847,
+      "precision": 0.6632653061224489,
+      "recall": 0.6190476190476191,
+      "f1": 0.6403940886699507,
+      "alert_rate": 0.04937027707808564
+    },
+    "primary_ci95": {
+      "pr_auc": [
+        0.5483046150607682,
+        0.7341550087789768
+      ],
+      "roc_auc": [
+        0.7871140878114102,
+        0.8871651294005403
+      ],
+      "precision": [
+        0.5686222910216718,
+        0.75
+      ],
+      "recall": [
+        0.5272352389878162,
+        0.71
+      ],
+      "f1": [
+        0.5581065010570826,
+        0.7087378640776698
+      ]
+    },
+    "comparison": {
+      "KMeans + cluster-mass prior (primary)": {
+        "pr_auc": 0.6458889336334935,
+        "roc_auc": 0.8387867274569403,
+        "best_f1_oracle": 0.7471264367816093,
+        "precision@5%": 0.6565656565656566,
+        "recall@5%": 0.6190476190476191
+      },
+      "GMM + cluster-mass prior": {
+        "pr_auc": 0.6485257841569525,
+        "roc_auc": 0.8427558257345491,
+        "best_f1_oracle": 0.7558139534883722,
+        "precision@5%": 0.6565656565656566,
+        "recall@5%": 0.6190476190476191
+      },
+      "HDBSCAN k-NN + cluster-mass prior": {
+        "pr_auc": 0.6459094168440233,
+        "roc_auc": 0.8292299898682878,
+        "best_f1_oracle": 0.7471264367816093,
+        "precision@5%": 0.6565656565656566,
+        "recall@5%": 0.6190476190476191
+      },
+      "Isolation Forest (baseline)": {
+        "pr_auc": 0.46938671392297565,
+        "roc_auc": 0.8096479229989868,
+        "best_f1_oracle": 0.5211267605633803,
+        "precision@5%": 0.41414141414141414,
+        "recall@5%": 0.3904761904761905
+      },
+      "PCA residual / SPE (Xu et al. baseline)": {
+        "pr_auc": 0.5144385782694813,
+        "roc_auc": 0.8307978723404256,
+        "best_f1_oracle": 0.5652173913043478,
+        "precision@5%": 0.4444444444444444,
+        "recall@5%": 0.41904761904761906
+      },
+      "Plain KMeans, silhouette-k, no mass prior": {
+        "pr_auc": 0.47867010716415426,
+        "roc_auc": 0.8243135764944276,
+        "best_f1_oracle": 0.5652173913043478,
+        "precision@5%": 0.45454545454545453,
+        "recall@5%": 0.42857142857142855
+      },
+      "Analyst grep rule: any message contains 'exception'": {
+        "precision": 1.0,
+        "recall": 0.20952380952380953,
+        "f1": 0.3464566929133858
+      }
+    },
+    "posthoc_transition_weight": {
+      "w_transition=0.6": {
+        "pr_auc": 0.6458889336334935,
+        "roc_auc": 0.8387867274569403,
+        "alert_rate_at_envelope_threshold": 0.04937027707808564,
+        "precision": 0.6632653061224489,
+        "recall": 0.6190476190476191
+      },
+      "w_transition=0.3": {
+        "pr_auc": 0.6493944963939866,
+        "roc_auc": 0.8472289766970618,
+        "alert_rate_at_envelope_threshold": 0.06448362720403022,
+        "precision": 0.515625,
+        "recall": 0.6285714285714286
+      },
+      "w_transition=0.0": {
+        "pr_auc": 0.6419919969043621,
+        "roc_auc": 0.8202228976697062,
+        "alert_rate_at_envelope_threshold": 0.17934508816120906,
+        "precision": 0.19662921348314608,
+        "recall": 0.6666666666666666
+      }
+    }
+  },
+  "ceiling": {
+    "train": {
+      "anomalies": 154,
+      "same_event_counts_as_routine": 98
+    },
+    "val": {
+      "anomalies": 54,
+      "same_event_counts_as_routine": 21
+    },
+    "test": {
+      "anomalies": 105,
+      "same_event_counts_as_routine": 40,
+      "caught_with_same_counts": 0,
+      "missed_with_same_counts": 40,
+      "caught_with_different_counts": 65,
+      "missed_with_different_counts": 0
+    }
+  }
+}
